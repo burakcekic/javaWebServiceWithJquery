@@ -1,0 +1,83 @@
+<ns1:deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns1="http://xml.apache.org/axis/wsdd/">
+ <ns1:globalConfiguration>
+  <ns1:parameter name="sendMultiRefs" value="true"/>
+  <ns1:parameter name="disablePrettyXML" value="true"/>
+  <ns1:parameter name="adminPassword" value="admin"/>
+  <ns1:parameter name="attachments.Directory" value="C:\Users\burak\Desktop\eclipse\workspace\web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\BtnAct\WEB-INF\attachments"/>
+  <ns1:parameter name="dotNetSoapEncFix" value="true"/>
+  <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
+  <ns1:parameter name="sendXMLDeclaration" value="true"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:requestFlow>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="session"/>
+   </ns1:handler>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="request"/>
+    <ns1:parameter name="extension" value=".jwr"/>
+   </ns1:handler>
+  </ns1:requestFlow>
+ </ns1:globalConfiguration>
+ <ns1:handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <ns1:handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <ns1:handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <ns1:service name="AdminService" provider="java:MSG">
+  <ns1:parameter name="allowedMethods" value="AdminService"/>
+  <ns1:parameter name="enableRemoteAdmin" value="false"/>
+  <ns1:parameter name="className" value="org.apache.axis.utils.Admin"/>
+  <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
+ </ns1:service>
+ <ns1:service name="Version" provider="java:RPC">
+  <ns1:parameter name="allowedMethods" value="getVersion"/>
+  <ns1:parameter name="className" value="org.apache.axis.Version"/>
+ </ns1:service>
+ <ns1:service name="ButtonAction" provider="java:RPC" style="wrapped" use="literal">
+  <ns2:operation name="getUrl" qname="ns1:getUrl" returnQName="ns1:getUrlReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://entity.model" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/"/>
+  <ns1:operation name="getDateTime" qname="ns2:getDateTime" returnQName="ns2:getDateTimeReturn" returnType="xsd:string" soapAction="" xmlns:ns2="http://entity.model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setUrl" qname="ns3:setUrl" soapAction="" xmlns:ns3="http://entity.model">
+   <ns1:parameter qname="ns3:url" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="setBrowser" qname="ns4:setBrowser" soapAction="" xmlns:ns4="http://entity.model">
+   <ns1:parameter qname="ns4:browser" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="setButtonId" qname="ns5:setButtonId" soapAction="" xmlns:ns5="http://entity.model">
+   <ns1:parameter qname="ns5:buttonId" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getButtonName" qname="ns6:getButtonName" returnQName="ns6:getButtonNameReturn" returnType="xsd:string" soapAction="" xmlns:ns6="http://entity.model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getButtonId" qname="ns7:getButtonId" returnQName="ns7:getButtonIdReturn" returnType="xsd:string" soapAction="" xmlns:ns7="http://entity.model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setDateTime" qname="ns8:setDateTime" soapAction="" xmlns:ns8="http://entity.model">
+   <ns1:parameter qname="ns8:dateTime" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="setButtonName" qname="ns9:setButtonName" soapAction="" xmlns:ns9="http://entity.model">
+   <ns1:parameter qname="ns9:buttonName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getBrowser" qname="ns10:getBrowser" returnQName="ns10:getBrowserReturn" returnType="xsd:string" soapAction="" xmlns:ns10="http://entity.model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="toString" qname="ns11:toString" returnQName="ns11:toStringReturn" returnType="xsd:string" soapAction="" xmlns:ns11="http://entity.model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:parameter name="allowedMethods" value="setDateTime getUrl getDateTime setButtonId toString setBrowser getButtonId setButtonName getBrowser setUrl getButtonName"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="ButtonAction"/>
+  <ns1:parameter name="className" value="model.entity.ButtonAction"/>
+  <ns1:parameter name="wsdlServicePort" value="ButtonAction"/>
+  <ns1:parameter name="schemaQualified" value="http://entity.model"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://entity.model"/>
+  <ns1:parameter name="wsdlServiceElement" value="ButtonActionService"/>
+ </ns1:service>
+ <ns1:transport name="http">
+  <ns1:requestFlow>
+   <ns1:handler type="URLMapper"/>
+   <ns1:handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </ns1:requestFlow>
+  <ns1:parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <ns1:parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </ns1:transport>
+ <ns1:transport name="local">
+  <ns1:responseFlow>
+   <ns1:handler type="LocalResponder"/>
+  </ns1:responseFlow>
+ </ns1:transport>
+</ns1:deployment>

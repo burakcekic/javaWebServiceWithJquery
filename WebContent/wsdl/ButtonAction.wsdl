@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://entity.model" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://entity.model" xmlns:intf="http://entity.model" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://entity.model" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getUrl">
+    <complexType/>
+   </element>
+   <element name="getUrlResponse">
+    <complexType>
+     <sequence>
+      <element name="getUrlReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getDateTime">
+    <complexType/>
+   </element>
+   <element name="getDateTimeResponse">
+    <complexType>
+     <sequence>
+      <element name="getDateTimeReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setUrl">
+    <complexType>
+     <sequence>
+      <element name="url" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setUrlResponse">
+    <complexType/>
+   </element>
+   <element name="setBrowser">
+    <complexType>
+     <sequence>
+      <element name="browser" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setBrowserResponse">
+    <complexType/>
+   </element>
+   <element name="setButtonId">
+    <complexType>
+     <sequence>
+      <element name="buttonId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setButtonIdResponse">
+    <complexType/>
+   </element>
+   <element name="getButtonName">
+    <complexType/>
+   </element>
+   <element name="getButtonNameResponse">
+    <complexType>
+     <sequence>
+      <element name="getButtonNameReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getButtonId">
+    <complexType/>
+   </element>
+   <element name="getButtonIdResponse">
+    <complexType>
+     <sequence>
+      <element name="getButtonIdReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setDateTime">
+    <complexType>
+     <sequence>
+      <element name="dateTime" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setDateTimeResponse">
+    <complexType/>
+   </element>
+   <element name="setButtonName">
+    <complexType>
+     <sequence>
+      <element name="buttonName" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setButtonNameResponse">
+    <complexType/>
+   </element>
+   <element name="getBrowser">
+    <complexType/>
+   </element>
+   <element name="getBrowserResponse">
+    <complexType>
+     <sequence>
+      <element name="getBrowserReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="toString">
+    <complexType/>
+   </element>
+   <element name="toStringResponse">
+    <complexType>
+     <sequence>
+      <element name="toStringReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="setUrlResponse">
+
+      <wsdl:part element="impl:setUrlResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setButtonIdResponse">
+
+      <wsdl:part element="impl:setButtonIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setButtonIdRequest">
+
+      <wsdl:part element="impl:setButtonId" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setDateTimeRequest">
+
+      <wsdl:part element="impl:setDateTime" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="toStringRequest">
+
+      <wsdl:part element="impl:toString" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setDateTimeResponse">
+
+      <wsdl:part element="impl:setDateTimeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setButtonNameRequest">
+
+      <wsdl:part element="impl:setButtonName" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getButtonNameResponse">
+
+      <wsdl:part element="impl:getButtonNameResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBrowserRequest">
+
+      <wsdl:part element="impl:getBrowser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUrlRequest">
+
+      <wsdl:part element="impl:getUrl" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDateTimeResponse">
+
+      <wsdl:part element="impl:getDateTimeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setBrowserRequest">
+
+      <wsdl:part element="impl:setBrowser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getButtonNameRequest">
+
+      <wsdl:part element="impl:getButtonName" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="toStringResponse">
+
+      <wsdl:part element="impl:toStringResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setBrowserResponse">
+
+      <wsdl:part element="impl:setBrowserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getButtonIdRequest">
+
+      <wsdl:part element="impl:getButtonId" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBrowserResponse">
+
+      <wsdl:part element="impl:getBrowserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUrlResponse">
+
+      <wsdl:part element="impl:getUrlResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getButtonIdResponse">
+
+      <wsdl:part element="impl:getButtonIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setButtonNameResponse">
+
+      <wsdl:part element="impl:setButtonNameResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDateTimeRequest">
+
+      <wsdl:part element="impl:getDateTime" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setUrlRequest">
+
+      <wsdl:part element="impl:setUrl" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ButtonAction">
+
+      <wsdl:operation name="getUrl">
+
+         <wsdl:input message="impl:getUrlRequest" name="getUrlRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getUrlResponse" name="getUrlResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getDateTime">
+
+         <wsdl:input message="impl:getDateTimeRequest" name="getDateTimeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getDateTimeResponse" name="getDateTimeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setUrl">
+
+         <wsdl:input message="impl:setUrlRequest" name="setUrlRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setUrlResponse" name="setUrlResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setBrowser">
+
+         <wsdl:input message="impl:setBrowserRequest" name="setBrowserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setBrowserResponse" name="setBrowserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setButtonId">
+
+         <wsdl:input message="impl:setButtonIdRequest" name="setButtonIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setButtonIdResponse" name="setButtonIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getButtonName">
+
+         <wsdl:input message="impl:getButtonNameRequest" name="getButtonNameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getButtonNameResponse" name="getButtonNameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getButtonId">
+
+         <wsdl:input message="impl:getButtonIdRequest" name="getButtonIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getButtonIdResponse" name="getButtonIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setDateTime">
+
+         <wsdl:input message="impl:setDateTimeRequest" name="setDateTimeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setDateTimeResponse" name="setDateTimeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setButtonName">
+
+         <wsdl:input message="impl:setButtonNameRequest" name="setButtonNameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setButtonNameResponse" name="setButtonNameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getBrowser">
+
+         <wsdl:input message="impl:getBrowserRequest" name="getBrowserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getBrowserResponse" name="getBrowserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="toString">
+
+         <wsdl:input message="impl:toStringRequest" name="toStringRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:toStringResponse" name="toStringResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ButtonActionSoapBinding" type="impl:ButtonAction">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getUrl">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getUrlRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getUrlResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getDateTime">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getDateTimeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getDateTimeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setUrl">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setUrlRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setUrlResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setBrowser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setBrowserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setBrowserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setButtonId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setButtonIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setButtonIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getButtonName">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getButtonNameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getButtonNameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getButtonId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getButtonIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getButtonIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setDateTime">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setDateTimeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setDateTimeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setButtonName">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setButtonNameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setButtonNameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getBrowser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getBrowserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getBrowserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="toString">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="toStringRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="toStringResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ButtonActionService">
+
+      <wsdl:port binding="impl:ButtonActionSoapBinding" name="ButtonAction">
+
+         <wsdlsoap:address location="http://localhost:8080/BtnAct/services/ButtonAction"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,53 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ButtonActionService WSDL service -->
+
+  <service name="ButtonAction" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://entity.model"/>
+      <parameter name="wsdlServiceElement" value="ButtonActionService"/>
+      <parameter name="schemaQualified" value="http://entity.model"/>
+      <parameter name="wsdlServicePort" value="ButtonAction"/>
+      <parameter name="className" value="model.entity.ButtonActionSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="ButtonAction"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getUrl" qname="operNS:getUrl" xmlns:operNS="http://entity.model" returnQName="retNS:getUrlReturn" xmlns:retNS="http://entity.model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getDateTime" qname="operNS:getDateTime" xmlns:operNS="http://entity.model" returnQName="retNS:getDateTimeReturn" xmlns:retNS="http://entity.model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setUrl" qname="operNS:setUrl" xmlns:operNS="http://entity.model" soapAction="" >
+        <parameter qname="pns:url" xmlns:pns="http://entity.model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="setBrowser" qname="operNS:setBrowser" xmlns:operNS="http://entity.model" soapAction="" >
+        <parameter qname="pns:browser" xmlns:pns="http://entity.model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="setButtonId" qname="operNS:setButtonId" xmlns:operNS="http://entity.model" soapAction="" >
+        <parameter qname="pns:buttonId" xmlns:pns="http://entity.model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getButtonName" qname="operNS:getButtonName" xmlns:operNS="http://entity.model" returnQName="retNS:getButtonNameReturn" xmlns:retNS="http://entity.model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getButtonId" qname="operNS:getButtonId" xmlns:operNS="http://entity.model" returnQName="retNS:getButtonIdReturn" xmlns:retNS="http://entity.model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setDateTime" qname="operNS:setDateTime" xmlns:operNS="http://entity.model" soapAction="" >
+        <parameter qname="pns:dateTime" xmlns:pns="http://entity.model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="setButtonName" qname="operNS:setButtonName" xmlns:operNS="http://entity.model" soapAction="" >
+        <parameter qname="pns:buttonName" xmlns:pns="http://entity.model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getBrowser" qname="operNS:getBrowser" xmlns:operNS="http://entity.model" returnQName="retNS:getBrowserReturn" xmlns:retNS="http://entity.model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="toString" qname="operNS:toString" xmlns:operNS="http://entity.model" returnQName="retNS:toStringReturn" xmlns:retNS="http://entity.model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="setDateTime getUrl getDateTime setButtonId toString setBrowser getButtonId setButtonName getBrowser setUrl getButtonName"/>
+
+  </service>
+</deployment>
